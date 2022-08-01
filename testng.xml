@@ -1,10 +1,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="PromodTest" thread-count="1">
+<suite name="PromodTest" thread-count="2">
 
-    <test name="TestSuitOne">
+    <test name="TestSuitOne" parallel="tests">
         <classes>
             <class name="PromodTEST.RegistrationTest" />
         </classes>
     </test>
+
+    <test name="TestSuitTwo" parallel="tests">
+        <classes>
+            <class name="PromodTEST.CareerTest" />
+        </classes>
+    </test>
+
 </suite>
