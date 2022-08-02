@@ -4,13 +4,13 @@
 
     <test name="TestSuitOne" parallel="tests">
         <classes>
-            <class name="PromodTEST.RegistrationTest" />
+            <class name="PromodTEST.RegistrationTest"/>
         </classes>
     </test>
 
     <test name="TestSuitTwo" parallel="tests">
         <classes>
-            <class name="PromodTEST.CareerTest" />
+            <class name="PromodTEST.CareerTest"/>
         </classes>
     </test>
 

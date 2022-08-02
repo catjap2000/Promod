@@ -2,6 +2,7 @@ package PromodTEST;
 
 import STEPS.CareerSteps;
 import UTILS.ChromeRunner;
+import io.qameta.allure.Attachment;
 import io.qameta.allure.Description;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -11,7 +12,7 @@ import static DATA.CareerDATA.*;
 @Listeners(UTILS.TestListener.class)
 public class CareerTest extends ChromeRunner {
     @Test
-    @Description ("Go to Career page, using filter (location, job type & category) choose 1 Job Announcement and Apply")
+    @Description ("Go to Career page, using filter (location, job type & category) choose 1 Job Announcement, fill credentials and Apply.")
     public void CareerPgPromod() throws InterruptedException {
         CareerSteps Career_Steps = new CareerSteps();
 
