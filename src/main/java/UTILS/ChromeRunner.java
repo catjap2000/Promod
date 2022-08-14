@@ -1,21 +1,26 @@
 package UTILS;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideConfig;
-import io.github.bonigarcia.wdm.webdriver.WebDriverBrowser;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
-
-import java.net.URI;
 
 public class ChromeRunner {
 
     @BeforeTest
-    public static void PromodChromeRunner(){
+    @Attachment
+    public static void PromodChromeRunner() {
 
         Configuration.browser = "Chrome";
         Configuration.baseUrl = "https://www.promod.com/en/";
         Configuration.browserSize = "1300x1080";
 
+    }
+
+
+    public void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "/Promod/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
     }
 }

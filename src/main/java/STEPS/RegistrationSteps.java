@@ -2,10 +2,8 @@ package STEPS;
 
 import PAGE.RegistrationPage;
 import com.codeborne.selenide.Condition;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Step;
+import com.codeborne.selenide.Screenshots;
+import io.qameta.allure.*;
 
 import static DATA.RegistrationDATA.*;
 import static com.codeborne.selenide.Selenide.open;
@@ -20,6 +18,7 @@ public class RegistrationSteps extends RegistrationPage {
     }
     @Step
     @Severity(SeverityLevel.MINOR)
+    @Attachment
     @Description("Accepting Cookies Button")
     public RegistrationSteps Cookies(){
         AcceptCookies.click();
@@ -29,6 +28,7 @@ public class RegistrationSteps extends RegistrationPage {
 
     @Step
     @Severity(SeverityLevel.NORMAL)
+    @Attachment
     @Description("Clicking on Registration button")
     public RegistrationSteps GoToAccountPage() {
         MainGoToCreateAccPg.click();
@@ -36,6 +36,7 @@ public class RegistrationSteps extends RegistrationPage {
     }
     @Step
     @Severity(SeverityLevel.NORMAL)
+    @Attachment
     @Description("Filling email address, Value: {Faker}")
     public RegistrationSteps mail (String mainLogInEmail) {
         MainEmailInput.setValue(MainLogInEmail).shouldNotBe(Condition.empty);
@@ -43,11 +44,13 @@ public class RegistrationSteps extends RegistrationPage {
     }
     @Step
     @Severity(SeverityLevel.NORMAL)
+    @Attachment
     @Description("Filling Password, Value: {@caTErina798j0}")
     public void MainPassword (String mainPasswordInp){
         MainPasswordInput.setValue(MainPasswordInp).click();
     }
     @Step
+    @Attachment
     @Severity(SeverityLevel.TRIVIAL)
     @Description("Selecting the Newsletter Checkbox")
     public RegistrationSteps NewsletterCheckBox (){
@@ -56,19 +59,25 @@ public class RegistrationSteps extends RegistrationPage {
     }
     @Step
     @Severity(SeverityLevel.CRITICAL)
+    @Attachment
     @Description("Clicking on the Create My Account button")
     public void AccButton () {
         MainCreateAccBtn.click();
     }
+
+
     @Step
     @Severity(SeverityLevel.NORMAL)
+    @Attachment
     @Description("Filling Family Name, Value {Faker}")
-    public RegistrationSteps MainCredentialsName(String mainFamilyNm) {
+    public RegistrationSteps MainCredentialsName(String mainFamilyNm) throws InterruptedException {
+        sleep(5000);
         familyNameInput.setValue(MainFamilyNm);
         return this;
     }
     @Step
     @Severity(SeverityLevel.NORMAL)
+    @Attachment
     @Description("Filling First Name, Value {Caterina}")
     public RegistrationSteps MainCredentialsFirstName(String mainFirstNm) {
         firstNameInput.setValue(MainFirstNm);
@@ -76,6 +85,7 @@ public class RegistrationSteps extends RegistrationPage {
     }
     @Step
     @Severity(SeverityLevel.NORMAL)
+    @Attachment
     @Description("Filling Date of Birth, Value {02/01/75}")
     public RegistrationSteps MainCredentialsDate(String mainDateOfBirth) {
         MainDateOfBirthInput.setValue(MainDateOfBirth);
@@ -83,6 +93,7 @@ public class RegistrationSteps extends RegistrationPage {
     }
     @Step
     @Severity(SeverityLevel.NORMAL)
+    @Attachment
     @Description("Filling Phone Number, Value {Faker}")
     public RegistrationSteps MainCredentialsPhone(String mainPhoneNum) {
         MainPhoneNumInput.setValue(MainPhoneNum);
@@ -90,6 +101,7 @@ public class RegistrationSteps extends RegistrationPage {
     }
     @Step
     @Severity(SeverityLevel.CRITICAL)
+    @Attachment
     @Description("Clicking Continue Button, Registration is finished")
     public void ContinueBut (){
         MainContinueButton.click();
