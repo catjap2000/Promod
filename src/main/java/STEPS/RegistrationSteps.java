@@ -2,7 +2,6 @@ package STEPS;
 
 import PAGE.RegistrationPage;
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Screenshots;
 import io.qameta.allure.*;
 
 import static DATA.RegistrationDATA.*;
@@ -10,101 +9,97 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class RegistrationSteps extends RegistrationPage {
-    @Step
+
+
+    @Step ("Open Account Page")
     @Severity(SeverityLevel.CRITICAL)
-    @Description("The Account Page should be open")
+    @Attachment(fileExtension = "png")
     public void openUrl(){
         open ("https://auth2.promod.com/en/?redirect_uri=www.promod.com%2Fen%2Fauth%2Fcallback%2F");
     }
-    @Step
+    @Step ("Accepting Cookies Button")
     @Severity(SeverityLevel.MINOR)
-    @Attachment
-    @Description("Accepting Cookies Button")
+    @Attachment(fileExtension = "png")
     public RegistrationSteps Cookies(){
         AcceptCookies.click();
         sleep(1000);
         return this;
     }
 
-    @Step
+    @Step ("Clicking on Registration button")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment
-    @Description("Clicking on Registration button")
+    @Attachment(fileExtension = "png")
     public RegistrationSteps GoToAccountPage() {
         MainGoToCreateAccPg.click();
         return this;
     }
-    @Step
+    @Step ("Filling email address, Value: {0}")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment
-    @Description("Filling email address, Value: {Faker}")
+    @Attachment(fileExtension = "png")
     public RegistrationSteps mail (String mainLogInEmail) {
         MainEmailInput.setValue(MainLogInEmail).shouldNotBe(Condition.empty);
         return this;
     }
-    @Step
+    @Step ("Filling Password, Value: {0}")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment
-    @Description("Filling Password, Value: {@caTErina798j0}")
+    @Attachment(fileExtension = "png")
     public void MainPassword (String mainPasswordInp){
         MainPasswordInput.setValue(MainPasswordInp).click();
     }
-    @Step
-    @Attachment
+
+    @Step ("Selecting the Newsletter Checkbox")
+    @Attachment(fileExtension = "png")
     @Severity(SeverityLevel.TRIVIAL)
-    @Description("Selecting the Newsletter Checkbox")
     public RegistrationSteps NewsletterCheckBox (){
         MainNewsletterCheckBox.click();
         return this;
     }
-    @Step
+
+    @Step ("Clicking on the Create My Account button")
     @Severity(SeverityLevel.CRITICAL)
-    @Attachment
-    @Description("Clicking on the Create My Account button")
+    @Attachment(fileExtension = "png")
     public void AccButton () {
         MainCreateAccBtn.click();
     }
 
 
-    @Step
+    @Step ("Filling Family Name, Value {0}")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment
-    @Description("Filling Family Name, Value {Faker}")
+    @Attachment(fileExtension = "jpg")
     public RegistrationSteps MainCredentialsName(String mainFamilyNm) throws InterruptedException {
         sleep(5000);
         familyNameInput.setValue(MainFamilyNm);
         return this;
     }
-    @Step
+    @Step ("Filling First Name, Value {0}")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment
-    @Description("Filling First Name, Value {Caterina}")
+    @Attachment(fileExtension = "png")
     public RegistrationSteps MainCredentialsFirstName(String mainFirstNm) {
         firstNameInput.setValue(MainFirstNm);
         return this;
     }
-    @Step
+    @Step ("Filling Date of Birth, Value {0}")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment
-    @Description("Filling Date of Birth, Value {02/01/75}")
+    @Attachment(fileExtension = "png")
     public RegistrationSteps MainCredentialsDate(String mainDateOfBirth) {
         MainDateOfBirthInput.setValue(MainDateOfBirth);
         return this;
     }
-    @Step
+    @Step ("Filling Phone Number, Value {0}")
     @Severity(SeverityLevel.NORMAL)
-    @Attachment
-    @Description("Filling Phone Number, Value {Faker}")
+    @Attachment(fileExtension = ".jpg")
+    @Description
     public RegistrationSteps MainCredentialsPhone(String mainPhoneNum) {
         MainPhoneNumInput.setValue(MainPhoneNum);
         return this;
     }
-    @Step
+    @Step ("Clicking Continue Button, Registration is finished")
     @Severity(SeverityLevel.CRITICAL)
-    @Attachment
-    @Description("Clicking Continue Button, Registration is finished")
+    @Attachment(fileExtension = ".png")
     public void ContinueBut (){
         MainContinueButton.click();
     }
+
+
 }
 

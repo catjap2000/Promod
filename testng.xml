@@ -2,6 +2,11 @@
 
 <suite name="PromodTest" thread-count="2">
 
+    <listeners>
+        <listener class-name="Other.Listeners">
+        </listener>
+    </listeners>
+
     <test name="TestSuitOne" parallel="tests">
         <classes>
             <class name="PromodTEST.RegistrationTest"/>

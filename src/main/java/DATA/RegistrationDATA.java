@@ -9,9 +9,9 @@ public interface RegistrationDATA {
             MainLogInEmail = Faker.instance().internet().emailAddress(),
             MainPasswordInp = "@caTErina798j0",
             MainFamilyNm = Faker.instance().name().lastName(),
-            MainFirstNm = "Caterina",
-            MainPhoneNum = Faker.instance().number().digits(11),
-            MainDateOfBirth = "02/01/75";
+            MainFirstNm = Faker.instance().name().firstName(),
+            MainPhoneNum = "4" + Faker.instance().number().digits(10),
+            MainDateOfBirth = String.valueOf(Faker.instance().date().birthday(20, 80));
 
 
 }

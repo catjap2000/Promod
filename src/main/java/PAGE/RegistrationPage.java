@@ -12,9 +12,9 @@ public class RegistrationPage {
     public SelenideElement
 
             MainGoToCreateAccPg = $(new ByText("Create an account")),
-            AcceptCookies = $("#popin_tc_privacy_button"),
+            AcceptCookies = $("#popin_tc_privacy_button_2"),
             MainEmailInput = $("#email"),
-            MainPasswordInput = $(byXpath("//*[@id=\"__layout\"]/div/main/div/section/div/div/form/div[2]/div[1]/div/input")),
+            MainPasswordInput = $(byXpath("//*[@id=\"__layout\"]/div/main/section/div/div/form/div/div/div/input")),
             MainNewsletterCheckBox = $(".pmd-checkbox_input"),
             MainCreateAccBtn = $(byText("Create my account")),
             familyNameInput = $("#name"),

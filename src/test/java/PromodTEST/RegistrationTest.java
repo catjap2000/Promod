@@ -3,15 +3,11 @@ package PromodTEST;
 import STEPS.RegistrationSteps;
 import UTILS.ChromeRunner;
 import com.codeborne.selenide.Condition;
-import io.qameta.allure.Attachment;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 import org.testng.annotations.Listeners;
-
-import javax.print.attribute.standard.MediaSize;
+import org.testng.asserts.SoftAssert;
 
 import static DATA.RegistrationDATA.*;
 
@@ -19,10 +15,12 @@ import static DATA.RegistrationDATA.*;
 public class RegistrationTest extends ChromeRunner {
 
         @Test
-        @Attachment
-        @Severity(SeverityLevel.NORMAL)
         @Description("Registering new account on Promod.com")
+        @Attachment(fileExtension = "png")
+        @Severity(SeverityLevel.CRITICAL)
+
         public void RegPgProm() throws InterruptedException {
+            SoftAssert softAll = new SoftAssert();
             RegistrationSteps Reg_Steps = new RegistrationSteps();
 
             Reg_Steps
@@ -46,9 +44,19 @@ public class RegistrationTest extends ChromeRunner {
             Reg_Steps
                     .MainCredentialsName(MainFamilyNm)
                     .MainCredentialsFirstName(MainFirstNm)
-                    .MainCredentialsDate(MainDateOfBirth)
+                    .MainCredentialsDate(MainDateOfBirth);
+//            Assert.assertTrue(Reg_Steps.MainDateOfBirthInput.is(Condition.value(String.valueOf(Date.from(Instant.ofEpochSecond(1900))))));
+
+            Reg_Steps
                     .MainCredentialsPhone(MainPhoneNum)
                     .ContinueBut();
+
+
+            softAll.assertAll();
+
         }
-    }
+        }
+
+
+
 

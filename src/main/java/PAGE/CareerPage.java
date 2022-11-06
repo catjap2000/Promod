@@ -10,10 +10,10 @@ import static com.codeborne.selenide.Selenide.$;
 public class CareerPage {
     public SelenideElement
 
-            AcceptCookiesMain = $("#popin_tc_privacy_button"),
+            AcceptCookiesMain = $("#popin_tc_privacy_button_2"),
             CareerPageSelector = $(("//*[@id=\"abtest-footer\"]/nav/div[3]/div[2]/ul/li[4]/a")),
-            CareerCookies = $(new ByText("Accept all")),
-            CareerOurJobOffers = $(new ByText("Our job offers")),
+            CareerCookies = $(By.xpath("//div[@id='main-container']/div/div/div/div[3]/button[2]")),
+            CareerOurJobOffers = $(new ByText("Nos offres")),
             CareerKeyword = $(By.xpath("//div[@class=\"search-engine__content\"]/form/div/div/input")),
             CareerLocation = $(new By.ByXPath("//html/body/div[1]/div[1]/div/main/div/section/div[2]/div/section/div/div[2]/form/div[2]/div/div/span/div/input")),
             CareerLocation2 = $(By.xpath("//a[@title=\"France\"]")),
@@ -22,7 +22,7 @@ public class CareerPage {
             CareerCategoryCheckBx = $(By.xpath("//section[@id='jobs']/div/div[2]/form/div[4]/div[@id=\"dropdown-15\"]/ul/li[3]/a/span/span[@class=\"icon-wrapper\"]")),
             CareerJobSearchBtn = $(By.xpath("//html/body/div[1]/div[1]/div/main/div/section/div[2]/div/section/div/div[2]/form/div[5]/button")),
             CareerJA = $(By.xpath("//div[@class=\"row justify-content-center\"]/a[1]")),
-            CareerJobApplyBtn = $(new ByText("Apply")),
+            CareerJobApplyBtn = $(new ByText("Postuler")),
             CareerFirsNameInput = $(By.xpath("//input[@class=\"form-control\"]")),
             CareerLastNameInput = $(By.xpath("//html/body/div/div/div/main/section/div/div/section/section/section/form/div[2]/input")),
             CareerRegEmailInput = $(By.xpath("//html/body/div/div/div/main/section/div/div/section/section/section/form/div[3]/input")),
